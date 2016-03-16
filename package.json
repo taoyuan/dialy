@@ -41,6 +41,7 @@
     "gulp-plumber": "^1.1.0",
     "mocha": "^2.4.5",
     "mock-require": "^1.2.1",
+    "nock-exec": "taoyuan/nock-exec",
     "tmp": "0.0.28"
   },
   "eslintConfig": {

@@ -52,8 +52,7 @@ describe('wvdialconf', function () {
   it('#get', function () {
     var wvdialconf = dialy.wvdialconf(configPath);
     return wvdialconf.get('Modem')
-      .spread(function (value, section) {
-        assert.equal('Dialer Defaults', section);
+      .then(function (value) {
         assert.equal('/dev/ttyS2', value);
       });
   });
@@ -65,8 +64,7 @@ describe('wvdialconf', function () {
       .then(function () {
         return wvdialconf.get('Modem');
       })
-      .spread(function (value, section) {
-        assert.equal('Dialer Defaults', section);
+      .then(function (value) {
         assert.equal('/dev/ttyUSB0', value);
       });
   });
@@ -78,8 +76,7 @@ describe('wvdialconf', function () {
       .then(function () {
         return wvdialconf.get('Modem');
       })
-      .spread(function (value, section) {
-        assert.equal('Dialer Defaults', section);
+      .then(function (value) {
         assert.equal('/dev/ttyUSB0', value);
       });
   });
