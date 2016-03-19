@@ -149,4 +149,16 @@ describe('wvdial', function () {
       })
     });
   });
+
+  describe('#connect', function () {
+    it('should work with DNS log to wvdialout', function () {
+      var wvdial = dialy.wvdial(tempConfigPath, {
+        device: '2-1:1.0'
+      });
+      setTimeout(function () {
+        fs.appendFileSync(wvdial.wvdialout, 'primary   DNS address 10.133.20.11\n');
+      }, 500);
+      return wvdial.connect();
+    });
+  });
 });
